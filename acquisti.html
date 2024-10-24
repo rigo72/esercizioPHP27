@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="gestione.php" method="post">
+        Nome dell'oggetto: <input type="text" name="nomeOggetto"><br>
+        Costo dell'oggetto: <input type="text" name="costo"><br>
+        Quantità: 
+        <select name="quantita">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select> <br>
+        L'oggetto è usato?
+        <input type="checkbox" name="usato" value="usato">Usato <br>
+        Metodo di pagamento: <br>
+        <input type="radio" value="Contanti" name="metodoPagamento">
+        <label for="Contanti">Contanti</label><br>
+        <input type="radio" value="Carta" name="metodoPagamento">
+        <label for="Carta">Carta di credito</label><br>
+        <input type="submit">
+    </form>
+</body> 
+</html>
