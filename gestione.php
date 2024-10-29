@@ -11,14 +11,28 @@
         $oggetto = $_POST["nomeOggetto"];
         $costo = $_POST["costo"];
         $quantita = $_POST["quantita"];
-        $usato = $_POST["usato"];
         $metodoDiPagamento = $_POST["metodoPagamento"];
+        intval($quantita);
+        if(isset($_POST["usato"])){
+            $stato = $_POST["usato"];
+        }else{
+            $stato = "nuovo";
+        }
+        if($stato == "usato"){
+            $costoTotale = $quantita * $costo - $costo*0.02;
+        }else{
+            $costoTotale = $costo * $quantita;
+        }
+        if($metodoDiPagamento == "Carta"){
+            $costoTotale = $costoTotale + 2;
+        }
         echo "
         <li>Oggetto: {$oggetto}</li>
         <li>Costo: {$costo}</li>
         <li>Quantità: {$quantita}</li>
-        <li>Usato: {$usato}</li>
-        <li>Metodo di pagamento: {$metodoDiPagamento}</li>";
+        <li>Usato: {$stato}</li>
+        <li>Metodo di pagamento: {$metodoDiPagamento}</li>
+        <li>Costo totale: {$costoTotale}</li>";
     ?>
     </ul>
 </body>
